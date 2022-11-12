@@ -24,7 +24,11 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: #ccd6e7;
+    background: #1e2731;
   }
+
+  /* card color #303a48 */
+  /* green button color #53feaf */
+  /* green text color #396d64 */
 }
