@@ -2,25 +2,38 @@ import Card from "../components/Card/Card";
 import { useState } from "react";
 
 const AdviceHomePage = (props) => {
-  const [quote, setQuote] = useState("");
+  const [quote, setQuote] = useState({
+    id: 0,
+    advice: "Generate a Quote!",
+  });
 
   const generateQuote = async () => {
     const response = await fetch("https://api.adviceslip.com/advice")
       .then((response) => response.json())
       .then((data) => {
-        return data["slip"];
+        setQuote(data["slip"]);
       });
+    console.log(quote);
 
-    const data = {
-      id: response.id,
-      advice: response.advice,
-    };
+    // const quoteData = {
+    //   id: response["id"],
+    //   advice: response["advice"],
+    // };
+
+    // something like
+    // props.adviceInfo(quoteData)
   };
 
   return (
     <>
-      <Card quoteData={data} />
-
+      {/* <Card quoteData={data} /> */}
+      {!quote ? (
+        <h1>Generate New Quote</h1>
+      ) : (
+        Object.values(quote).map((data) => {
+          return <Card key={data}>{data}</Card>;
+        })
+      )}
       <button className="flex justify-center" onClick={generateQuote}>
         Generate Quote
       </button>
@@ -29,3 +42,5 @@ const AdviceHomePage = (props) => {
 };
 
 export default AdviceHomePage;
+
+// get static props probably would work best here

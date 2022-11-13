@@ -1,10 +1,9 @@
 const Card = (props) => {
   return (
-    <div className="h-screen w-">
-      <div className="h-60 w-full justify-center place-items-center grid">
-        <h3>Advice #123</h3>
+    <div className=" ">
+      <div className="flex  w-full justify-center place-items-center ">
         <div className="">
-          <p>{props.quote}</p>
+          <p>{props.children}</p>
         </div>
       </div>
     </div>
