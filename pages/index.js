@@ -13,7 +13,7 @@ const AdviceHomePage = (props) => {
       .then((data) => {
         setQuote(data["slip"]);
       });
-    console.log(quote);
+    // console.log(quote);
   };
 
   return (
@@ -26,9 +26,9 @@ const AdviceHomePage = (props) => {
           return <Card key={data}>{data}</Card>;
         })
       )}
-      <button className="flex justify-center" onClick={generateQuote}>
-        Generate Quote
-      </button>
+      <div className="flex items-center justify-center mt-4">
+        <button onClick={generateQuote}>Generate Quote</button>
+      </div>
     </>
   );
 };
