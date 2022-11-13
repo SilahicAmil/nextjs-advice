@@ -14,14 +14,6 @@ const AdviceHomePage = (props) => {
         setQuote(data["slip"]);
       });
     console.log(quote);
-
-    // const quoteData = {
-    //   id: response["id"],
-    //   advice: response["advice"],
-    // };
-
-    // something like
-    // props.adviceInfo(quoteData)
   };
 
   return (
