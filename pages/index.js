@@ -35,4 +35,5 @@ const AdviceHomePage = (props) => {
 
 export default AdviceHomePage;
 
-// get static props probably would work best here
+// GET SERVER SIDE PROPS of ipData
+// and just pass data directly through props
